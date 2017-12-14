@@ -1,0 +1,8 @@
+{
+  "name": "cp_vb_integral",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -51,7 +51,7 @@ let firebaseConfig = {
     PoissonPage,
     TstudentPage,
     MathJaxDirective,
-    FrecuenciaPage
+    FrecuenciaPage,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Tabla de Frecuencia</ion-title>
+    <ion-title>Datos Estadisticos</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,32 +25,125 @@
     <ion-item item-divider color="home-cardTitle">
         Cálculo
     </ion-item>
+    
     <form [formGroup]="prueba" (submit)="tabla()" novalidate>
-     <ion-item>
-      <ion-input formControlName="dat" [disabled]="buttonDisabled" type="string" [(ngModel)]="dat" name="dat"></ion-input>
-    </ion-item> 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button ion-button full type="submit" [disabled]="buttonDisabled" color="home-navbar">Calcular</button>
-        </ion-col>
-        <ion-col>
-          <button ion-button full color="danger" (click)="reset()" type="reset" color="home-naranjo">Borrar</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    </form>
-   
+        <ion-item>
+          <ion-label stacked>Ingrese datos</ion-label>
+          <ion-input formControlName="dat" placeholder="Ingese al dos valores y máximo 8 valores" [(ngModel)]="dat" name="dat"></ion-input>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+               <button ion-button full type="submit" [disabled]="buttonDisabled" ion-button (click)= "tabla()" color="home-navbar"> Calcular </button>  
+            </ion-col>
+            <ion-col>
+              <button ion-button full type="reset" (click)="reset()" color="home-naranjo">Borrar</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      </form>
     
 
     <ion-item item-divider color="primary" *ngIf="visible" color="home-cardTitle">
       Resultados
     </ion-item>
 
-    <ion-card-content *ngIf="visible" [MathJax]="res_text" style="text-align: justify;">
-      {{res_text}}
-      <p>&nbsp;</p>
-    </ion-card-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                Datos ordenados
+            </ion-col>
+            <ion-col> 
+                <ion-card-content *ngIf="visible" [MathJax]="res_text7" style="text-align: justify;">
+                    {{res_text7}}
+                   <p>&nbsp;</p>
+                </ion-card-content>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+          <ion-col>
+              Media Aritmética (Promedio)
+          </ion-col>
+          <ion-col> 
+             <ion-card-content *ngIf="visible" [MathJax]="res_text" style="text-align: justify;">
+              {{res_text}}
+              <p>&nbsp;</p>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              Valor Máximo
+          </ion-col>
+          <ion-col> 
+              <ion-card-content *ngIf="visible" [MathJax]="res_text2" style="text-align: justify;">
+                  {{res_text2}}
+                 <p>&nbsp;</p>
+              </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              Valor Mínimo
+          </ion-col>
+          <ion-col> 
+              <ion-card-content *ngIf="visible" [MathJax]="res_text3" style="text-align: justify;">
+                  {{res_text3}}
+                 <p>&nbsp;</p>
+              </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              Moda
+          </ion-col>
+          <ion-col> 
+              <ion-card-content *ngIf="visible" [MathJax]="res_text4" style="text-align: justify;">
+                  {{res_text4}}
+                 <p>&nbsp;</p>
+              </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              Mediana
+          </ion-col>
+          <ion-col> 
+              <ion-card-content *ngIf="visible" [MathJax]="res_text5" style="text-align: justify;">
+                  {{res_text5}}
+                 <p>&nbsp;</p>
+              </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              Varianza
+          </ion-col>
+          <ion-col> 
+              <ion-card-content *ngIf="visible" [MathJax]="res_text6" style="text-align: justify;">
+                  {{res_text6}}
+                 <p>&nbsp;</p>
+              </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+  
+
+   
+
+    
+
+   
+
+    
+
+    
+
+   
+
+
   
     <p style="text-align: center; color: grey;"><small>&copy; 2017 | Universidad de Playa Ancha de Ciencias de la Educación</small></p>
     <img src="assets/imgs/Lab[e]saM.png">
